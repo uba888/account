@@ -1,0 +1,71 @@
+##公司id:1099##-----------------------------------------------
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="good_" version="1.5">
+
+   <field name="_version_" type="long" indexed="true" stored="true"/>
+   <field name="_root_" type="string" indexed="true" stored="false"/>
+   
+   <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   <field name="title" type="string" indexed="true" stored="true"/>
+   <field name="description" type="string" indexed="true" stored="true"/>
+   <field name="img" type="string" indexed="true" stored="true"/>
+   <field name="url" type="string" indexed="true" stored="true"/>
+   <field name="price"  type="double" indexed="true" stored="true"/>
+   <field name="discount_price"  type="double" indexed="true" stored="true"/>
+   <field name="num" type="int" indexed="true" stored="true" />
+   <field name="create_time" type="long" indexed="true" stored="true" />
+   <field name="status" type="int" indexed="true" stored="true"/>
+
+   <uniqueKey>id</uniqueKey>
+	
+   <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+   <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+   <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
+   <fieldtype name="binary" class="solr.BinaryField"/>
+
+</schema>
+##公司id:1099##-----------------------------------------------
+mkdir: cannot create directory ‘/home/ops/solr-5.5/solr-5.5.0/server/solr/good_1099/’: File exists
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="good_1099" version="1.5">
+
+   <field name="_version_" type="long" indexed="true" stored="true"/>
+   <field name="_root_" type="string" indexed="true" stored="false"/>
+   
+   <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   <field name="title" type="string" indexed="true" stored="true"/>
+   <field name="description" type="string" indexed="true" stored="true"/>
+   <field name="img" type="string" indexed="true" stored="true"/>
+   <field name="url" type="string" indexed="true" stored="true"/>
+   <field name="price"  type="double" indexed="true" stored="true"/>
+   <field name="discount_price"  type="double" indexed="true" stored="true"/>
+   <field name="num" type="int" indexed="true" stored="true" />
+   <field name="create_time" type="long" indexed="true" stored="true" />
+   <field name="status" type="int" indexed="true" stored="true"/>
+
+   <uniqueKey>id</uniqueKey>
+	
+   <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+   <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+   <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
+   <fieldtype name="binary" class="solr.BinaryField"/>
+
+</schema>

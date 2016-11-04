@@ -1,0 +1,329 @@
+ops@iZ237wnulopZ:/alidata/account$ bash main.sh 济南美康医院 453068953@qq.com defaulte http://alihuodong.clickplus.cn http://allpage.clickplus.cn http://allpersonal.clickplus.cn
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+1
+==================================添加公司=============================================
+{'success': True, 'data': '????'}
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+2
+==================================mongo数据初始化=============================================
+{'success': True, 'data': '创建成功！'}
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+3
+==================================sorl初始化=============================================
+##1611031328##-----------------------------------------------
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema name="good_1102" version="1.5">
+
+   <field name="_version_" type="long" indexed="true" stored="true"/>
+   <field name="_root_" type="string" indexed="true" stored="false"/>
+   
+   <field name="id" type="string" indexed="true" stored="true" required="true" multiValued="false" />
+   <field name="title" type="string" indexed="true" stored="true"/>
+   <field name="description" type="string" indexed="true" stored="true"/>
+   <field name="img" type="string" indexed="true" stored="true"/>
+   <field name="url" type="string" indexed="true" stored="true"/>
+   <field name="price"  type="double" indexed="true" stored="true"/>
+   <field name="discount_price"  type="double" indexed="true" stored="true"/>
+   <field name="num" type="int" indexed="true" stored="true" />
+   <field name="create_time" type="long" indexed="true" stored="true" />
+   <field name="status" type="int" indexed="true" stored="true"/>
+
+   <uniqueKey>id</uniqueKey>
+
+   <fieldType name="string" class="solr.StrField" sortMissingLast="true" />
+   <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true"/>
+   <fieldType name="int" class="solr.TrieIntField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="float" class="solr.TrieFloatField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="long" class="solr.TrieLongField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="double" class="solr.TrieDoubleField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="tint" class="solr.TrieIntField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tfloat" class="solr.TrieFloatField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tlong" class="solr.TrieLongField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="tdouble" class="solr.TrieDoubleField" precisionStep="8" positionIncrementGap="0"/>
+   <fieldType name="date" class="solr.TrieDateField" precisionStep="0" positionIncrementGap="0"/>
+   <fieldType name="tdate" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
+   <fieldtype name="binary" class="solr.BinaryField"/>
+
+</schema>
+Sending stop command to Solr running on port 8983 ... waiting 5 seconds to allow Jetty process 24625 to stop gracefully.
+Waiting up to 30 seconds to see Solr running on port 8983 [/]  
+Started Solr server on port 8983 (pid=30380). Happy searching!
+
+>>>>>>请进入 http://120.27.146.30:8983/solr/#/~cores/good_3 手动添加core
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+4
+==================================创建站点=============================================
+>>>>>>登录用户管理项目并创建网站，手动完成 http://marketingmanage.clickplus.cn/
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+5
+==================================创建cdn服务=============================================
+>>>>>>登录https://console.upyun.com 绑定cdn域名
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+6
+==================================创建基础网站数据=============================================
+{'success': True, 'data': '修改成功！'}
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+7
+===================================添加个性化============================================
+ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '://allpersonal.clickplus.cn where idsite=1113' at line 1
++--------+---------+--------------+------+--------------------------------+----------+---------------------+---------------------+------+-----------------------------+------------------+
+| idsite | company | name         | type | main_url                       | app_type | create_time         | update_time         | flag | cdn_url                     | personalized_url |
++--------+---------+--------------+------+--------------------------------+----------+---------------------+---------------------+------+-----------------------------+------------------+
+|   1113 |    1102 | 活动站点     |    1 | http://alihuodong.clickplus.cn |        1 | 2016-11-03 13:30:27 | 2016-11-03 13:30:43 |    1 | http://allpage.clickplus.cn | NULL             |
++--------+---------+--------------+------+--------------------------------+----------+---------------------+---------------------+------+-----------------------------+------------------+
++-----------+-------------+---------+
+| tenant_id | personalise | hav_app |
++-----------+-------------+---------+
+|      1102 |           1 |       0 |
++-----------+-------------+---------+
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+8
+==================================nginx跳转配置=============================================
+>>>>>>手动进行配置并重启 sudo sh -c "sed -s 's/alihuodong.clickplus.cn/uba.com/g' nginx.conf>>/etc/nginx/conf.d/vhost.conf"
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
+9
+======================================数据配置=================================================
+>>>>>>数据配置使用方法：执行bash data_set.sh tenant_id site_id
+=============================请选择相应菜单进行操作============================
+请选择你要进行的操作:
+ 0) 修改odps数据表
+ 1) 配置数据流
+ 2) 添加数据同步调度
+ q) exit
+0
+##公司id:1102##修改用户odps数据表:-----------------------------------------------
+CREATE TABLE IF NOT EXISTS session_stat_1102(
+        sessionid string,
+        session_type    bigint,
+        session_time    bigint,
+    req_info    string)
+PARTITIONED BY (dt string);
+CREATE TABLE IF NOT EXISTS user_event_new_1102(
+        idvisit bigint,
+        sessionid       string,
+        visitor_cookie  string,
+        user_id string,
+        campany_id      bigint,
+        idsite  bigint,
+        fc      string,
+        media   string,
+        visitor_returning bigint,
+        device_type     bigint,
+        location_ip     string,
+        location_longitude      double,
+        location_latitude       double,
+        location_city   string,
+        location_country        string,
+        config_device_type      string,
+        config_os       string,
+        config_os_version       string,
+        config_device_brand     string,
+        config_browser_name     string,
+        config_browser_version  string,
+        ua      string,
+        current_url     string,
+        referer_url     string,
+        e_c     string,
+        e_a     string,
+        e_n     string,
+        e_v     string,
+        page_title      string,
+        server_time     bigint,
+        visit_first_action_time bigint,
+        visit_last_action_time  bigint,
+        idgoal  bigint,
+        revenue bigint,
+        is_returning    boolean,
+        is_active_landing       boolean,
+        is_landing      boolean,
+        is_filter       boolean,
+        plan_id bigint,
+        active_id       bigint,
+        page_id bigint,
+        channel_id      bigint,
+        channel_type    string,
+        page_type       bigint,
+        abtest_id       bigint,
+        module_id       bigint,
+        module_index    string,
+        column_index    bigint,
+        good_index      bigint,
+        good_id string,
+        is_abtest       bigint,
+        hour    string)
+        PARTITIONED BY (dt string);
+>>>>>配置修改完成，开始创建表....
+
+ID = 20161103053410113glcut8jc2
+Log view:
+http://logview.odps.aliyun.com/logview/?h=http://service.odps.aliyun.com/api&p=marketingcloud_all_new&i=20161103053410113glcut8jc2&token=QlBjb2hxekxoU3FpMnhrN0RlUDJ4TUFaNEg4PSxPRFBTX09CTzoxNTYwNjY1MjY1MTUzNDQ0LDE0Nzg3NTYwNTEseyJTdGF0ZW1lbnQiOlt7IkFjdGlvbiI6WyJvZHBzOlJlYWQiXSwiRWZmZWN0IjoiQWxsb3ciLCJSZXNvdXJjZSI6WyJhY3M6b2RwczoqOnByb2plY3RzL21hcmtldGluZ2Nsb3VkX2FsbF9uZXcvaW5zdGFuY2VzLzIwMTYxMTAzMDUzNDEwMTEzZ2xjdXQ4amMyIl19XSwiVmVyc2lvbiI6IjEifQ==
+OK
+
+ID = 20161103053415644gwqj17jc2
+Log view:
+http://logview.odps.aliyun.com/logview/?h=http://service.odps.aliyun.com/api&p=marketingcloud_all_new&i=20161103053415644gwqj17jc2&token=bTUzYW43Y3p5cVJnYzA1MzRoVkc5WnBkTUtvPSxPRFBTX09CTzoxNTYwNjY1MjY1MTUzNDQ0LDE0Nzg3NTYwNTcseyJTdGF0ZW1lbnQiOlt7IkFjdGlvbiI6WyJvZHBzOlJlYWQiXSwiRWZmZWN0IjoiQWxsb3ciLCJSZXNvdXJjZSI6WyJhY3M6b2RwczoqOnByb2plY3RzL21hcmtldGluZ2Nsb3VkX2FsbF9uZXcvaW5zdGFuY2VzLzIwMTYxMTAzMDUzNDE1NjQ0Z3dxajE3amMyIl19XSwiVmVyc2lvbiI6IjEifQ==
+OK
+>>>>>数据表创建成功.........
+>>>>>开始恢复配置...........
+CREATE TABLE IF NOT EXISTS session_stat_9999(
+CREATE TABLE IF NOT EXISTS user_event_new_9999(
+>>>>>>恢>复初始化配置完成
+=============================请选择相应菜单进行操作============================
+请选择你要进行的操作:
+ 0) 修改odps数据表
+ 1) 配置数据流
+ 2) 添加数据同步调度
+ q) exit
+1
+##公司id:1102##站点id:1113##配置数据流---------------------------------------------------
+table_info=29,marketingcloud_all_new,2,3|44,marketingcloud_all_new,2,3|45,marketingcloud_all_new,20,1047|46,marketingcloud_all_new,2,1048|47,marketingcloud_all_new,2,1049|49,marketingcloud_all_new,2,1050|50,marketingcloud_all_new,2,1051|51,marketingcloud_all_new,2,1052|52,marketingcloud_all_new,1,1053|53,marketingcloud_all_new,1,1054|54,marketingcloud_all_new,1,1055|55,marketingcloud_all_new,2,1058|1061,marketingcloud_all_new,10,1060|1062,marketingcloud_all_new,20,1061|1065,marketingcloud_all_new,2,1062|1066,marketingcloud_all_new,2,1063|1067,marketingcloud_all_new,2,1064|1068,marketingcloud_all_new,2,1066|1070,marketingcloud_all_new,2,1067|1072,marketingcloud_all_new,2,1068|1073,marketingcloud_all_new,2,1069|1075,marketingcloud_all_new,2,1070|1078,marketingcloud_all_new,2,1071|1079,marketingcloud_all_new,2,1072|32,marketingcloud_all_new,1,1033|33,marketingcloud_all_new,6,1034|35,marketingcloud_all_new,15,1036|37,marketingcloud_all_new,7,1039|38,marketingcloud_all_new,8,1040|39,marketingcloud_all_new,9,1042|40,marketingcloud_all_new,10,1043|41,marketingcloud_all_new,11,1044|42,marketingcloud_all_new,12,1045|1082,marketingcloud_all_new,20,1073|1083,marketingcloud_all_new,2,1074|1084,marketingcloud_all_new,2,1075|1085,marketingcloud_all_new,2,1076|1086,marketingcloud_all_new,2,1077|1087,marketingcloud_all_new,2,1078|1088,marketingcloud_all_new,2,1079|1089,marketingcloud_all_new,2,1080|1090,marketingcloud_all_new,2,1073|1091,marketingcloud_all_new,2,1081|1092,marketingcloud_all_new,2,1082|1093,marketingcloud_all_new,20,1061|1094,marketingcloud_all_new,2,1083|1095,marketingcloud_all_new,2,1084|1096,marketingcloud_all_new,2,1085|1097,marketingcloud_all_new,2,1086|1098,marketingcloud_all_new,2,1087|1099,marketingcloud_all_new,2,1088|1100,marketingcloud_all_new,2,1089|1101,marketingcloud_all_new,2,1090|1102,marketingcloud_all_new,2,1091|1103,marketingcloud_all_new,2,1092|1104,marketingcloud_all_new,2,1093|1105,marketingcloud_all_new,2,1094|1106,marketingcloud_all_new,2,1095|1107,marketingcloud_all_new,2,1096|1108,marketingcloud_all_new,2,1097|1109,marketingcloud_all_new,2,1098|1111,marketingcloud_all_new,2,1099|1112,marketingcloud_all_new,2,1101|1113,marketingcloud_all_new,2,1102
+>>>>>>修改配置完成，重启进程
+>>>>>>旧进程
+ops      28707  0.7  1.4 8707348 238160 ?      Sl   11:34   0:55 /opt/jdk1.7.0_60/bin/java -jar ./bin/WriteODPSYunAllinone.jar ./conf/WriteYun.properties ./conf/SiteDb.properties
+ops      31957  0.0  0.0  11744   924 pts/8    S+   13:34   0:00 grep WriteODPSYunAllinone
+data_set.sh: line 35: kill: (31961) - No such process
+>>>>>>新进程
+ops      31969  117  0.9 8704240 156024 ?      Sl   13:34   0:02 /opt/jdk1.7.0_60/bin/java -jar ./bin/WriteODPSYunAllinone.jar ./conf/WriteYun.properties ./conf/SiteDb.properties
+ops      32056  0.0  0.0  11744   920 pts/8    S+   13:34   0:00 grep WriteODPSYunAllinone
+>>>>>>数据流配置完成.........
+=============================请选择相应菜单进行操作============================
+请选择你要进行的操作:
+ 0) 修改odps数据表
+ 1) 配置数据流
+ 2) 添加数据同步调度
+ q) exit
+2
+##公司id:1102##添加数据同步调度---------------------------------------------------
+processUser=3,1047,1048,1049,1050,1051,1052,1053,1054,1055,1058,1060,1061,1062,1063,1064,1066,1067,1068,1069,1070,1071,1072,1033,1034,1036,1039,1040,1042,1043,1044,1045,1073,1074,1075,1076,1077,1078,1079,1080,1081,1082,1083,1084,1085,1086,1087,1088,1089,1090,1091,1092,1093,1094,1095,1096,1097,1098,1099,1101,1102
+processUser=3,1047,1048,1049,1050,1051,1052,1053,1054,1055,1058,1060,1061,1062,1063,1064,1066,1067,1068,1069,1070,1071,1072,1033,1034,1036,1039,1040,1042,1043,1044,1045,1073,1074,1075,1076,1077,1078,1079,1080,1081,1082,1083,1084,1085,1086,1087,1088,1089,1090,1091,1092,1093,1094,1095,1096,1097,1098,1099,1101,1102
+>>>>>>数据同步调度完成......
+=============================请选择相应菜单进行操作============================
+请选择你要进行的操作:
+ 0) 修改odps数据表
+ 1) 配置数据流
+ 2) 添加数据同步调度
+ q) exit
+q
+===退出菜单.....
+==================谢谢使用--Byebye=====================
+=================================请选择相应菜单进行操作=======================================
+请选择你要进行的操作:
+ 1) 添加公司
+ 2) mongo数据初始化
+ 3) sorl初始化
+ 4) 登录用户管理项目并创建站点
+ 5) 创建cdn服务
+ 6) 创建基础网站数据
+ 7) 添加个性化
+ 8) nginx跳转配置
+ 9) 数据配置
+ d) 删除数据
+ q) exit
