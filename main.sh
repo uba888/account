@@ -84,8 +84,25 @@ function nginx_config {
 	jump_url=`echo $1|awk -F '//' '{print $2}'`
     personal_url=`echo $2|awk -F '//' '{print $2}'`
     jump_ip=`./getip.py $jump_url`
-    echo ">>>>>>jump:$jump_ip手动进行配置并重启 sudo sh -c \"sed -s "s/alihuodong.clickplus.cn/$jump_url/g" nginx.conf>>/etc/nginx/conf.d/vhost.conf\""
-    echo ">>>>>>personal手动进行配置并重启 sudo sh -c \"sed -s "s/allpersonal.clickplus.cn/$personal_url/g" nginx.conf>>/etc/nginx/conf.d/vhost.conf\""
+    echo ">>>>>>jump:$jump_ip进行配置并重启 sudo sh -c \"sed -s "s/alihuodong.clickplus.cn/$jump_url/g" nginx.conf>>/etc/nginx/conf.d/vhost.conf\""
+    echo ">>>>>>personal进行配置并重启 sudo sh -c \"sed -s "s/allpersonal.clickplus.cn/$personal_url/g" nginx.conf>>/etc/nginx/conf.d/vhost.conf\""
+	while true;do	
+		echo "=================================请选择相应菜单进行操作======================================="
+		echo "请选择你要进行的操作:"
+		echo " 1) 重启jump的nginx"
+		echo " 2) 重启个性化的nginx"
+		echo " q) exit"
+		read num
+		case "$num" in
+			"1")
+				ssh -t -p 22 ops@$jump_ip "bash /alidata/account/nginx_config.sh $jump_url";;
+			"2")
+				ssh -t -p 22 ops@114.55.4.124 "bash /alidata/account/nginx_config.sh $personal_url";;
+			"q")
+				echo "===退出菜单....."
+				break;;
+		esac
+	done
 }
 
 
