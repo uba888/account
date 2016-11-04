@@ -2,21 +2,6 @@
 #encoding utf-8
 ##使用方法 bash main.sh 公司名称,邮箱,服务名，jump_url,cdn_url,personal_url
 
-function sorl_init {
-    ##sorl目录配置创建,以及sorl重启,进入网站手动添加core
-	echo "==================================sorl初始化============================================="
-    tenant_id=`mysql -h114.55.21.195 -ujdyun_ops -pJdyun123456 -e "use marketingcloud_business;select TenantID from t_tenantuser where Email=\"$2\";"|sed -n '2p'`
-	echo "##`date +%y%m%d%H%M`##-----------------------------------------------"
-    sorl_root="/home/ops/solr-5.5/solr-5.5.0/server/solr/good_$tenant_id/"
-    mkdir "$sorl_root"
-    cp -r  /home/ops/solr-5.5/conf $sorl_root
-    sed -s "s/good_9999/good_$tenant_id/g" "$sorl_root"conf/schema.xml &&sed -i "s/good_9999/good_$tenant_id/g" "$sorl_root"conf/schema.xml
-	/home/ops/solr-5.5/solr-5.5.0/bin/solr stop -p 8983
-	sleep 3
-	/home/ops/solr-5.5/solr-5.5.0/bin/solr start -p 8983
-	echo ">>>>>>请进入 http://120.27.146.30:8983/solr/#/~cores/good_3 手动添加core"
-}
-
 
 function tenant_add {
 	echo "==================================添加公司============================================="
@@ -35,8 +20,22 @@ function mongo_add {
 	tenant_id=`mysql -h114.55.21.195 -ujdyun_ops -pJdyun123456 -e "use marketingcloud_business;select TenantID from t_tenantuser where Email=\"$2\";"|sed -n '2p'`
 	./mongo_add.py $tenant_id
 }
-##sorl初始化
-#sorl_init $tenant_id
+
+function sorl_init {
+    ##sorl目录配置创建,以及sorl重启,进入网站手动添加core
+    echo "==================================sorl初始化============================================="
+    tenant_id=`mysql -h114.55.21.195 -ujdyun_ops -pJdyun123456 -e "use marketingcloud_business;select TenantID from t_tenantuser where Email=\"$2\";"|sed -n '2p'`
+    echo "##`date +%y%m%d%H%M`##-----------------------------------------------"
+    sorl_root="/home/ops/solr-5.5/solr-5.5.0/server/solr/good_$tenant_id/"
+    mkdir "$sorl_root"
+    cp -r  /home/ops/solr-5.5/conf $sorl_root
+    sed -s "s/good_9999/good_$tenant_id/g" "$sorl_root"conf/schema.xml &&sed -i "s/good_9999/good_$tenant_id/g" "$sorl_root"conf/schema.xml
+    /home/ops/solr-5.5/solr-5.5.0/bin/solr stop -p 8983
+    sleep 3
+    /home/ops/solr-5.5/solr-5.5.0/bin/solr start -p 8983
+    echo ">>>>>>请进入 http://120.27.146.30:8983/solr/#/~cores/good_3 手动添加core"
+}
+
 
 ##登录用户管理项目并创建网站，手动完成
 function site_create {
