@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #传入参数公司id,服务名,jump_url,cdn_url,personal_url
+#bash replace_domain.sh 1099 defaulte http://alihuodong.clickplus.cn http://allpage.clickplus.cn http://allpersonal.clickplus.cn
 echo "更换域名步骤
 1、绑定又拍云 请手动完成
 2、修改数据库三个表 site,auto_tenant_upyun,auto_tenant_url
@@ -36,4 +37,48 @@ function update_data {
 	done
 }
 
-update_data $1 $2 $3 $4 $5
+function nginx_config {
+    ##nginx跳转配置 传入jump_url,personal_url
+    echo "==================================nginx跳转配置============================================="
+    jump_url=`echo $1|awk -F '//' '{print $2}'`
+    personal_url=`echo $2|awk -F '//' '{print $2}'`
+    jump_ip=`./getip.py $jump_url`
+    echo ">>>>>>jump:$jump_ip进行配置并重启 sudo sh -c \"sed -s "s/alihuodong.clickplus.cn/$jump_url/g" nginx.conf>>/etc/nginx/conf.d/vhost.conf\""
+    echo ">>>>>>personal进行配置并重启 sudo sh -c \"sed -s "s/allpersonal.clickplus.cn/$personal_url/g" nginx.conf>>/etc/nginx/conf.d/vhost.conf\""
+    while true;do
+        echo "=================================请选择相应菜单进行操作======================================="
+        echo "请选择你要进行的操作:"
+        echo " 1) 重启jump的nginx"
+        echo " 2) 重启个性化的nginx"
+        echo " q) exit"
+        read num
+        case "$num" in
+            "1")
+                ssh -t -p 22 ops@$jump_ip "bash /alidata/account/nginx_config.sh $jump_url";;
+            "2")
+                ssh -t -p 22 ops@114.55.4.124 "bash /alidata/account/nginx_config.sh $personal_url";;
+            "q")
+                echo "===退出菜单....."
+                break;;
+        esac
+    done
+}
+
+while true;do
+	echo "=================================请选择相应菜单进行操作======================================="
+	echo "请选择你要进行的操作:"
+	echo " 1) 更新表数据"
+	echo " 2) 重启nginx"
+	echo " q) exit"
+	read num
+	case "$num" in
+		"1")
+			update_data $1 $2 $3 $4 $5;;
+		"2")
+			nginx_config $3 $5;;
+		"q")
+			echo "===退出菜单....."
+			break;;
+	esac
+done
+
