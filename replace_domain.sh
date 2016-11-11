@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #传入参数公司id,服务名,jump_url,cdn_url,personal_url
-#bash replace_domain.sh 1099 defaulte http://alihuodong.clickplus.cn http://allpage.clickplus.cn http://allpersonal.clickplus.cn
+#bash replace_domain.sh 1099 defaulte http://alihuodong.clickplus.cn http://allpage.clickplus.cn http://allpersonal.clickplus.cn/
 echo "更换域名步骤
 1、绑定又拍云 请手动完成
 2、修改数据库三个表 site,auto_tenant_upyun,auto_tenant_url
@@ -64,11 +64,19 @@ function nginx_config {
     done
 }
 
+function data_insert {
+	echo "======================================记录备份================================================="
+	#传入参数：公司id,服务名,jump_url,cdn_url,personal_url
+	mysql -h114.55.21.195 -ujdyun_ops -pJdyun123456 -e "use zabbix;update clickplus_account set bucket_name=\"$2\",jump_url=\"$3\",cdn_url=\"$4\",personal_url=\"$5\" where tenant_id=\"$1\";"
+}
+
+
 while true;do
 	echo "=================================请选择相应菜单进行操作======================================="
 	echo "请选择你要进行的操作:"
 	echo " 1) 更新表数据"
 	echo " 2) 重启nginx"
+	echo " 3) 记录备份"
 	echo " q) exit"
 	read num
 	case "$num" in
@@ -76,6 +84,8 @@ while true;do
 			update_data $1 $2 $3 $4 $5;;
 		"2")
 			nginx_config $3 $5;;
+		"3")
+			data_insert $1 $2 $3 $4 $5;;
 		"q")
 			echo "===退出菜单....."
 			break;;
